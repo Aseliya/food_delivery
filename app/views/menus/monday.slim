@@ -1,0 +1,12 @@
+h3
+  = link_to 'New Menu', new_menu_path if current_user.admin?
+p#notice
+  = notice
+h1
+  | Listing Menu on Monday
+.table-responsive
+  table.table
+    = render 'thead_form'
+    tbody
+      = render(@menus.monday)
+br

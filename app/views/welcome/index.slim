@@ -1,18 +1,18 @@
 .container.pt-3.text-center
   h1
     | Welcome to Lunch Ordering SaaS!
-  .list-group.pt-3.col-md-3
-    a.list-group-item.list-group-item-action[href="#"]
-      | Sunday
-    a.list-group-item.list-group-item-action[href="#"]
-      | Monday
-    a.list-group-item.list-group-item-action[href="#"]
-      | Tuesday
-    a.list-group-item.list-group-item-action[href="#"]
-      | Wednesday
-    a.list-group-item.list-group-item-action[href="#"]
-      | Thursday
-    a.list-group-item.list-group-item-action[href="#"]
-      | Friday
-    a.list-group-item.list-group-item-action[href="#"]
-      | Saturday
+  .list-group.pt-3.col-md-3.text-decoration-none
+    .list-group-item.list-group-item-action
+      = link_to "Sunday", sunday_menus_path, class: "text-decoration-none"
+    .list-group-item.list-group-item-action
+      = link_to "Monday", monday_menus_path
+    .list-group-item.list-group-item-action
+      = link_to "Tuesday", tuesday_menus_path
+    .list-group-item.list-group-item-action
+      = link_to "Wednesday", wednesday_menus_path
+    .list-group-item.list-group-item-action
+      = link_to "Thursday", thursday_menus_path
+    .list-group-item.list-group-item-action
+      = link_to "Friday", friday_menus_path
+    .list-group-item.list-group-item-action
+      = link_to "Saturday", saturday_menus_path

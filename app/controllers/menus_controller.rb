@@ -3,6 +3,20 @@
 class MenusController < ApplicationController
   before_action :set_menu, only: %i[show edit update destroy]
 
+  def sunday; end
+
+  def monday; end
+
+  def tuesday; end
+
+  def wednesday; end
+
+  def thursday; end
+
+  def friday; end
+
+  def saturday; end
+
   def index
     @menus = Menu.all
   end
