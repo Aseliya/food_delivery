@@ -5,13 +5,13 @@ Rails.application.routes.draw do
   root 'welcome#index'
   resources :users
   resources :menus do
-    collection do 
-      get 'sunday' 
-      get 'monday'   
-      get 'tuesday'  
-      get 'wednesday'  
-      get 'thursday'  
-      get 'friday'   
+    collection do
+      get 'sunday'
+      get 'monday'
+      get 'tuesday'
+      get 'wednesday'
+      get 'thursday'
+      get 'friday'
       get 'saturday'
     end
   end
