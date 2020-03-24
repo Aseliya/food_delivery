@@ -1,20 +1,18 @@
-nav.navbar.fixed.navbar-dark.bg-dark.navbar-expand-md
-.container
-  .navbar-nav.ml-auto
-    .navbar-nav.ml-auto
-      - if user_signed_in?
-        .nav-item
-            h4
-            |  Hello, 
-            = current_user.name
-            div
-              = link_to 'Edit profile', edit_user_registration_path(current_user)
-            div
-              = link_to 'Sign out', destroy_user_session_path, method: :delete
-
-      - else
-        .nav-item
-          = link_to 'Sign up', new_user_registration_path, class: 'nav-link'
-        .nav-item
-          = link_to 'Log in', new_user_session_path, class: 'nav-link'
+nav.navbar.fixed.navbar-expand-md
+.container.d-flex
+  .navbar-nav
+    - if user_signed_in?
+      .nav-item
+        | Hello, 
+        = current_user.name
+        div
+          span
+            = link_to 'Edit profile', edit_user_registration_path(current_user)
+          span.pl-3
+            = link_to 'Sign out', destroy_user_session_path, method: :delete
+    - else
+      .nav-item
+        = link_to 'Sign up', new_user_registration_path, class: 'nav-link'
+      .nav-item
+        = link_to 'Log in', new_user_session_path, class: 'nav-link'
       
