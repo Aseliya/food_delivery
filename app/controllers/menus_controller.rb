@@ -2,21 +2,6 @@
 
 class MenusController < ApplicationController
   before_action :set_menu, only: %i[show edit update destroy]
-  before_action :find_menu, only: %i[monday sunday tuesday wednesday thursday friday saturday]
-
-  def sunday; end
-
-  def monday; end
-
-  def tuesday; end
-
-  def wednesday; end
-
-  def thursday; end
-
-  def friday; end
-
-  def saturday; end
 
   def index
     @menus = Menu.all
@@ -65,10 +50,6 @@ class MenusController < ApplicationController
   end
 
   private
-
-  def find_menu
-    @menus = Menu.all
-  end
 
   def set_menu
     @menu = Menu.find(params[:id])

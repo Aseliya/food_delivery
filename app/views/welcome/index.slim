@@ -1,18 +1,7 @@
 .pt-3.text-center
   h1
     | Welcome to Lunch Ordering SaaS!
-  .list-group.pt-3.col-md-3
-    .list-group-item.list-group-item-action
-      = link_to "Sunday", sunday_menus_path
-    .list-group-item.list-group-item-action
-      = link_to "Monday", monday_menus_path
-    .list-group-item.list-group-item-action
-      = link_to "Tuesday", tuesday_menus_path
-    .list-group-item.list-group-item-action
-      = link_to "Wednesday", wednesday_menus_path
-    .list-group-item.list-group-item-action
-      = link_to "Thursday", thursday_menus_path
-    .list-group-item.list-group-item-action
-      = link_to "Friday", friday_menus_path
-    .list-group-item.list-group-item-action
-      = link_to "Saturday", saturday_menus_path
+  - @menus.each do |menu|
+    .list-group.pt-3.col-md-3
+      .list-group-item.list-group-item-action
+        = link_to "#{menu.order_date.strftime("%A %d.%m.%Y")}", menu_path(menu) if @days_from_this_week.include?(menu.order_date)
